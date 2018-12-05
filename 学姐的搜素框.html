@@ -1,0 +1,98 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+.demo {
+    padding: 200px;
+    background: #666;
+}
+.search {
+    position: relative;
+}
+input{
+    outline:none;
+}
+.search:before {
+    content: "";
+    border: solid #777;
+    border-width: 2px 1px ;   /*搜索图标 上下边框 左右边框*/
+    width: 5px;
+    height: 0;
+    display: inline-block;
+    transform: rotate(45deg);
+    position: absolute;  /*绝对定位*/
+    left:16px;
+    top:15px;
+    z-index:3;  /*元素堆叠顺序*/
+}
+.search:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border: 2px solid #777;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    top: 7px;
+    display: inline-block;
+}
+
+.search input{
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    border: 0 none;
+    color: #777;
+    border-radius: 20px;
+    transition: all 0.7s ease 0s; /*所有元素 动画持续时间 速度曲线 */
+}
+.search input:focus {
+    width: 200px;                     /*长度边长*/
+}
+/*===========黑色背景色============*/
+.bgBlack input{
+    background-color: #444;
+}
+
+/*===============高亮背景色==============*/
+.bgLight input{
+    background-color: #fcfcfc;/*change the background color*/
+    color: #bebebe;/*change the font color*/
+}
+
+
+/*==============黑色变灰色====================*/
+.appleSearch input {
+    background-color: #444;
+    color: #d7d7d7;
+}
+
+.appleSearch input:focus {
+    background-color: #fcfcfc;
+    color: #6a6f75;
+}
+    </style>    
+   </head>
+<body>
+<div class="demo">
+    <h2>黑色背景</h2>
+    <form action="" id="searchBlack" method="get" class="search bgBlack">
+        <input type="text" name="search" size="40" placeholder="Search..." />
+    </form>
+    <h2>高亮背景</h2>
+    <form action="" id="searchLight" method="get" class="search bgLight">
+        <input type="text" name="search" size="40" placeholder="Search..." />
+    </form>
+    <h2>黑色背景到高亮背景</h2>
+    <form action="" id="searchApple" method="get" class="search appleSearch">
+        <input type="text" name="search" size="40" placeholder="Search..." />
+    </form>
+</div>
+
+</body>
+</html>

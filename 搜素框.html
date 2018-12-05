@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>搜素框</title>
+	<style>
+	body{
+		background-color: #999;
+	}
+	.search{
+		position: relative;   /*哇，这又是为什么，有这个定位和美这个定位有很大区别*/
+		border: none;
+	}
+	.search:before{
+		content: "";
+		border:2px solid #777;
+		border-radius:5px;
+		width: 5px;
+		height: 5px;
+		position: absolute;
+		left: 20px;
+		top: 10px;
+	}
+	.search:after{
+		content: "";
+		border: solid #777;
+		border-radius:5px;
+		border-width: 2px 5px;
+		position: absolute;
+		left: 26px; 
+		top: 20px;
+		transform: rotate(45deg);
+	}
+	.search input{
+		border-radius: 20px;
+		width: 200px;
+		height: 30px;
+		border-style: none;
+		transition: 6s linear;
+	}
+	.search input:hover{
+		width: 500px;
+	}
+	.a1 input{
+		background-color: #444;
+	}
+	.a3 input{
+		background-color: #444;
+	}
+	.a3 input:hover{
+		background-color: #fcfcfc;
+		transition:color 0.1s;     
+		transition:width 2s;
+	}
+	</style>
+</head>
+<body>
+<div id="div1">
+<h2>黑色</h2>
+<form id="form1" class="search a1">
+<input type="text" name="search" placeholder="          search...">
+</form>
+<h2>白色</h2>
+<form id="form2" class="search a2">
+<input type="text" name="search" placeholder="          search...">
+</form>
+<h2>黑变白色</h2>
+<form id="form3" class="search a3">
+<input type="text" name="search" placeholder="          search...">
+</form>
+</div>
+</body>
+</html>
